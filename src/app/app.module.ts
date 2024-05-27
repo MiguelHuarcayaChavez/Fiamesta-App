@@ -11,6 +11,10 @@ import { PgPageNotFoundComponent } from './public/pages/pg-page-not-found/pg-pag
 import { PgLoginAdminComponent } from './auth/pages/pg-login-admin/pg-login-admin.component';
 import { PgLoginCustomerComponent } from './auth/pages/pg-login-customer/pg-login-customer.component';
 import { PgRegisterComponent } from './auth/pages/pg-register/pg-register.component';
+import { HeaderSectionComponent } from './public/components/header-section/header-section.component';
+import { ProfileDataComponent } from './public/components/profile-data/profile-data.component';
+import { PgHomeAdminComponent } from './home/pages/pg-home-admin/pg-home-admin.component';
+import { PgHomeCustomerComponent } from './home/pages/pg-home-customer/pg-home-customer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { PgRegisterComponent } from './auth/pages/pg-register/pg-register.compon
     PgPageNotFoundComponent,
     PgLoginAdminComponent,
     PgLoginCustomerComponent,
-    PgRegisterComponent
+    PgRegisterComponent,
+    HeaderSectionComponent,
+    ProfileDataComponent,
+    PgHomeAdminComponent,
+    PgHomeCustomerComponent
   ],
   imports: [
     BrowserModule,
