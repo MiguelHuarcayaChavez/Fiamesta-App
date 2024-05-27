@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'login-admin', component: PgLoginAdminComponent},
   {path: 'login-customer', component: PgLoginCustomerComponent},
   {path: 'register', component: PgRegisterComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full'}
+  {path: '', redirectTo: 'login-admin', pathMatch: 'full'}
 ];
 
 @NgModule({
