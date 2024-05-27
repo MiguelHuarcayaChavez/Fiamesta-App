@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Alan Garcia",
+      "dni": "05898635",
+      "password": "1234",
+      "admin": true
+    },
+    {
+      "id": 2,
+      "username": "Peter Castle",
+      "dni": "79848950",
+      "password": "1234",
+      "admin": false
+    },
+    {
+      "id": 3,
+      "username": "Ricolas Quispe",
+      "dni": "98467905",
+      "password": "1234",
+      "admin": false
+    }
+  ]
+}
