@@ -1,0 +1,22 @@
+.footer {
+    text-align: left;
+    padding: 20px; /* Agrega espacio entre el contenido y el borde del footer */
+    background-color: #d9d9d9; /* Cambia el color de fondo del footer según tu preferencia */
+  }
+  
+  .footer-content {
+    display: inline-block;
+  }
+  
+  .footer-content img {
+    width: 350px; /* Ajusta el tamaño del logo aquí */
+    display: block;
+  }
+  
+  .footer-content p {
+    margin-top: 5px; /* Espacio entre el logo y la frase */
+  }
+  
+  .footer-content p:last-child {
+    margin-bottom: 0; /* Elimina el espacio inferior de la última frase */
+  }

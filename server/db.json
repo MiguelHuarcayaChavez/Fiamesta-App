@@ -11,15 +11,16 @@
       "id": 2,
       "username": "Peter Castle",
       "dni": "79848950",
-      "password": "1234",
+      "password": "5678",
       "admin": false
     },
     {
       "id": 3,
       "username": "Ricolas Quispe",
       "dni": "98467905",
-      "password": "1234",
+      "password": "91011",
       "admin": false
     }
   ]
 }
+
