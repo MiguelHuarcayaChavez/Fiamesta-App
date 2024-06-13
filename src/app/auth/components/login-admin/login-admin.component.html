@@ -1,1 +1,21 @@
-<p>login-admin works!</p>
+<div class="background-image">
+  <div class="container">
+    <div class="content">
+      <h1>Inicio de sesión para gerentes</h1>
+      <form (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <label for="dni">Ingrese su DNI</label>
+          <input type="text" id="dni" name="dni" required pattern="[0-9]{1,8}" title="Por favor, ingrese hasta 8 dígitos numéricos" maxlength="8" [(ngModel)]="dni" name="dni" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        </div>
+        <div class="input-group">
+          <label for="password">Ingrese su contraseña</label>
+          <input type="password" id="password" name="password" required [(ngModel)]="password">
+        </div>
+        <button type="submit" class="button-center">Ingresar</button>
+      </form>
+      <a routerLink="/register">¿Nuevo? Crea una cuenta</a>
+      <a routerLink="/login-customer">¿Es cliente?</a>
+    </div>
+  </div>
+</div>
+
