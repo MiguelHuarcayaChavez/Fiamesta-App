@@ -21,5 +21,17 @@
       "password": "1234",
       "admin": false
     }
+  ],
+  "credits": [
+    {
+      "id": 1,
+      "costoTotal": 250,
+      "tasa": 2,
+      "Mora": true,
+      "totalPagar": 5000,
+      "fechaLimite": "05-02-2024",
+      "tipoTasa": "nominal",
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+    }
   ]
 }
