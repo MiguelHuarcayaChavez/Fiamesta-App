@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'login-customer', component: PgLoginCustomerComponent},
   { path: 'pg-home-customer', component: PgHomeCustomerComponent },
 
+
   {path: 'register', component: PgRegisterComponent},
   {path: '', redirectTo: 'login-admin', pathMatch: 'full'}
 ];

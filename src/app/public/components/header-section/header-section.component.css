@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #808080; /* Gris */
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  font-size: 18px;
+}
+
+.navbar-right .logo {
+  height: 40px; /* Ajusta el tamaño del logo según sea necesario */
+}
