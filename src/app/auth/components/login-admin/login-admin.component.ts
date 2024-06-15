@@ -1,45 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-
-interface User {
-  id: number;
-  username: string;
-  dni: string;
-  password: string;
-  admin: boolean;
-}
+import {UserEntity} from "../../model/user.entity";
 
 @Component({
   selector: 'app-login-admin',
   templateUrl: './login-admin.component.html',
   styleUrls: ['./login-admin.component.css']
 })
-export class LoginAdminComponent implements OnInit {
-  dni: string = '';
-  password: string = '';
-  users: User[] = [];
+export class LoginAdminComponent {
+  user: UserEntity = {} as UserEntity;
+  error: boolean = false;
+  error_msg: string = '';
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
-    this.authService.getUsers().subscribe(data => {
-      this.users = data.users;
-      console.log('Users loaded:', this.users); // Verifica que los usuarios se cargan
-    }, error => {
-      console.error('Error loading users:', error);
-    });
-  }
-
   onSubmit() {
-    console.log('DNI:', this.dni, 'Password:', this.password); // Verifica los valores del formulario
-    const user = this.users.find((u: User) => u.dni === this.dni && u.password === this.password && u.admin);
-    if (user) {
-      console.log('Login successful:', user); // Verifica el usuario encontrado
-      this.router.navigate(['/pg-home-admin']);
-    } else {
-      console.error('Login failed: invalid credentials or not an admin'); // Informa del fallo de login
-      alert('DNI o contraseña incorrectos, o no tiene permisos de administrador.');
-    }
+    this.authService.findUserByDniAndPassword(this.user.dni, this.user.password).subscribe((data:any)=>{
+      const info = data[0];
+      if (info === undefined) {
+        this.error = true;
+        this.error_msg = 'DNI or Password incorrect';
+      } else {
+        this.router.navigate([ info.dni,`home-admin`]);
+      }
+    })
   }
 }

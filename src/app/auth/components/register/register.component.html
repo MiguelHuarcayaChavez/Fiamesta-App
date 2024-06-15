@@ -20,6 +20,9 @@
 
         <button type="submit" class="button-center">Registrarse</button>
       </form>
+      <div class="alert alert-danger" *ngIf="error">
+        {{ error_msg }}
+      </div>
       <a routerLink="/login-customer">¿Ya tienes una cuenta? Inicia sesión</a>
     </div>
   </div>

@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-
-interface User {
-  id: number;
-  username: string;
-  dni: string;
-  password: string;
-  admin: boolean;
-}
+import {UserEntity} from "../../model/user.entity";
 
 @Component({
   selector: 'app-login-customer',
@@ -16,33 +9,26 @@ interface User {
   styleUrls: ['./login-customer.component.css']
 })
 export class LoginCustomerComponent {
-  dni: string = '';
+  user: UserEntity = {} as UserEntity;
+  error: boolean = false;
+  error_msg: string = '';
 
   constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit() {
-    console.log('Submit button clicked'); // Verificar que la función onSubmit() se está llamando
-
-    // Obtener la lista de usuarios
-    this.authService.getUsers().subscribe(data => {
-      console.log('Users:', data.users); // Verificar los datos de los usuarios devueltos por el servicio
-      const users: User[] = data.users;
-
-      // Filtrar los usuarios que no sean administradores
-      const customerUsers: User[] = users.filter(user => !user.admin);
-      console.log('Customer users:', customerUsers); // Verificar los usuarios filtrados
-
-      // Buscar el usuario por DNI
-      const user = customerUsers.find(u => u.dni === this.dni);
-      console.log('User found:', user); // Verificar el usuario que se está buscando
-
-      if (user) {
-        // Si se encuentra el usuario, redirigir a la página adecuada para clientes
-        this.router.navigate(['/pg-home-customer']);
+    this.authService.findUserByDni(this.user.dni).subscribe((data:any)=>{
+      const info = data[0];
+      if (info === undefined) {
+        this.error = true;
+        this.error_msg = 'DNI not found';
       } else {
-        // Si no se encuentra el usuario, mostrar un mensaje de error
-        alert('DNI incorrecto o no tiene permisos de cliente.');
+        if(info.admin === false){
+          this.router.navigate([info.dni,`home-customer`]);
+        }else{
+          this.error = true;
+          this.error_msg = 'This DNI not a customer';
+        }
       }
-    });
+    })
   }
 }

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+
 
 interface User {
   id: number;
@@ -15,26 +14,18 @@ interface User {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/users';
-
-  constructor(private http: HttpClient) { }
-
-  getUsers(): Observable<{ users: User[] }> {
-    return this.http.get<{ users: User[] }>(this.apiUrl);
+  baseUrl = 'http://localhost:3000';
+  constructor(private http:HttpClient){
   }
 
-  registerUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          if (error.status === 409) {
-            // DNI already exists
-            return throwError('El DNI proporcionado ya está registrado.');
-          } else {
-            // Other errors
-            return throwError('Error al registrar usuario. Por favor, inténtelo de nuevo.');
-          }
-        })
-      );
+  createUser(jsonUser:any){
+    return this.http.post(`${this.baseUrl}/users`,jsonUser)
   }
+  findUserByDniAndPassword(dni:any,password:any){
+    return this.http.get(`${this.baseUrl}/users?dni=${dni}&password=${password}`)
+  }
+  findUserByDni(dni:any){
+    return this.http.get(`${this.baseUrl}/users?dni=${dni}`)
+  }
+
 }

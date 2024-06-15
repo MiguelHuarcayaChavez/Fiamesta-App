@@ -1,28 +1,35 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "Alan Garcia",
+      "id": "1",
+      "username": "Alan Garcia La Venganza",
       "dni": "05898635",
       "password": "1234",
       "admin": true
     },
     {
-      "id": 2,
-      "username": "Peter Castle",
+      "id": "2",
+      "username": "Peter Castle VI",
       "dni": "79848950",
       "admin": false
     },
     {
-      "id": 3,
-      "username": "Ricolas Quispe",
+      "id": "3",
+      "username": "Ricolas Quispe Maldini",
       "dni": "98467905",
       "admin": false
+    },
+    {
+      "id": "4",
+      "username": "Jesus Andres Lujan Carrion",
+      "dni": "74294745",
+      "password": "1234",
+      "admin": true
     }
   ],
   "credits": [
     {
-      "id": 1,
+      "id": "1",
       "costoTotal": 250,
       "tasa": 2,
       "Mora": true,
@@ -33,4 +40,3 @@
     }
   ]
 }
-

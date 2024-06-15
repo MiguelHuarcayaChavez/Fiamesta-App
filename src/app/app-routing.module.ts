@@ -12,10 +12,10 @@ import {PgHomeCustomerComponent} from "./home/pages/pg-home-customer/pg-home-cus
 
 const routes: Routes = [
   {path: 'login-admin', component: PgLoginAdminComponent},
-  { path: 'pg-home-admin', component: PgHomeAdminComponent },
+  { path: ':dni/home-admin', component: PgHomeAdminComponent },
 
   {path: 'login-customer', component: PgLoginCustomerComponent},
-  { path: 'pg-home-customer', component: PgHomeCustomerComponent },
+  { path: ':dni/home-customer', component: PgHomeCustomerComponent },
 
 
   {path: 'register', component: PgRegisterComponent},

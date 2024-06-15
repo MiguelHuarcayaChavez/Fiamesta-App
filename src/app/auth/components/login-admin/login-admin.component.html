@@ -5,14 +5,17 @@
       <form (ngSubmit)="onSubmit()">
         <div class="input-group">
           <label for="dni">Ingrese su DNI</label>
-          <input type="text" id="dni" name="dni" required pattern="[0-9]{1,8}" title="Por favor, ingrese hasta 8 dígitos numéricos" maxlength="8" [(ngModel)]="dni" name="dni" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+          <input type="text" id="dni" name="dni" required pattern="[0-9]{1,8}" title="Por favor, ingrese hasta 8 dígitos numéricos" maxlength="8" [(ngModel)]="user.dni" name="dni" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
         </div>
         <div class="input-group">
           <label for="password">Ingrese su contraseña</label>
-          <input type="password" id="password" name="password" required [(ngModel)]="password">
+          <input type="password" id="password" name="password" required [(ngModel)]="user.password">
         </div>
         <button type="submit" class="button-center">Ingresar</button>
       </form>
+      <div class="alert alert-danger" *ngIf="error">
+        {{ error_msg }}
+      </div>
       <a routerLink="/register">¿Nuevo? Crea una cuenta</a>
       <a routerLink="/login-customer">¿Es cliente?</a>
     </div>
