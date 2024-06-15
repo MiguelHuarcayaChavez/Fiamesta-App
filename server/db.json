@@ -9,12 +9,14 @@
     },
     {
       "id": "2",
+      "idAdmin": "1",
       "username": "Peter Castle VI",
       "dni": "79848950",
       "admin": false
     },
     {
       "id": "3",
+      "idAdmin": "4",
       "username": "Ricolas Quispe Maldini",
       "dni": "98467905",
       "admin": false
@@ -30,7 +32,52 @@
   "credits": [
     {
       "id": "1",
+      "idCustomer": "2",
+      "costoTotal": 150,
+      "tasa": 2,
+      "Mora": true,
+      "totalPagar": 5000,
+      "fechaLimite": "05-10-2024",
+      "tipoTasa": "nominal",
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+    },
+    {
+      "id": "2",
+      "idCustomer": "2",
+      "costoTotal": 100,
+      "tasa": 4,
+      "Mora": false,
+      "totalPagar": 5000,
+      "fechaLimite": "05-08-2024",
+      "tipoTasa": "nominal",
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+    },
+    {
+      "id": "3",
+      "idCustomer": "2",
       "costoTotal": 250,
+      "tasa": 2,
+      "Mora": true,
+      "totalPagar": 5000,
+      "fechaLimite": "05-02-2024",
+      "tipoTasa": "nominal",
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+    },
+    {
+      "id": "4",
+      "idCustomer": "3",
+      "costoTotal": 500,
+      "tasa": 2,
+      "Mora": true,
+      "totalPagar": 5000,
+      "fechaLimite": "05-02-2024",
+      "tipoTasa": "nominal",
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+    },
+    {
+      "id": "5",
+      "idCustomer": "3",
+      "costoTotal": 300,
       "tasa": 2,
       "Mora": true,
       "totalPagar": 5000,
