@@ -20,3 +20,8 @@ body {
 .navbar-right .logo {
   height: 40px; /* Ajusta el tamaño del logo según sea necesario */
 }
+span{
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
