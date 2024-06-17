@@ -1,6 +1,6 @@
 <nav class="navbar">
-  <div class="navbar-left">Bienvenido, <span>{{user.username}}</span></div>
+  <div class="navbar-left">Bienvenido, <span>{{ user.username }}</span></div>
   <div class="navbar-right">
-    <img src="./assets/logo.png" alt="Logo" class="logo">
+    <button (click)="logout()">Cerrar sesión</button>
   </div>
 </nav>

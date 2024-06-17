@@ -18,6 +18,10 @@ export class HeaderSectionComponent {
   ngOnInit(){
     this.api.findUserByDni(this.user.dni).subscribe((data:any)=>{
       this.user.username = data[0].username;
+      this.user.admin = data[0].admin;
     })
+  }
+  logout() {
+    this.user.admin ? this.router.navigate(['/login-admin']) : this.router.navigate(['/login-customer']);
   }
 }
