@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="fade-in-container">
+    <h1 class="center">CLIENTES</h1>
+    <!--TODO: Button Añadir cliente-->
+    <div *ngFor="let customer of customers; let i = index">
+      <div class="credit-container">
+        <div class="customer-header">
+          <p>ID del Cliente: {{customer.id}}</p>
+        </div>
+        <div class="customer-details">
+          <div class="left-section">
+            <p>DNI: {{customer.dni}}</p>
+            <p>Nombre: {{customer.username}}</p>
+            <p>Telefono: {{customer.telefono}}</p>
+            <!--Solo si hay tiempo<p>Moroso: </p>-->
+          </div>
+          <div class="right-section">
+            <p>Numero de creditos hechos: {{numeroDeComprasTotales[i]}} </p>
+            <p>Total que debe: {{TotalEnDeuda[i]}}</p>
+            <!--TODO: Button Mas Detalles de Cliente-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

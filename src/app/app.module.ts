@@ -18,6 +18,7 @@ import { ProfileDataComponent } from './public/components/profile-data/profile-d
 import { PgHomeAdminComponent } from './home/pages/pg-home-admin/pg-home-admin.component';
 import { PgHomeCustomerComponent } from './home/pages/pg-home-customer/pg-home-customer.component';
 import { CurrentAccountComponent } from './home/components/current-account/current-account.component';
+import { CustomersListComponent } from './home/components/customers-list/customers-list.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { CurrentAccountComponent } from './home/components/current-account/curre
     PgHomeAdminComponent,
     PgHomeCustomerComponent,
     CurrentAccountComponent,
+    CustomersListComponent,
   ],
   imports: [
     BrowserModule,

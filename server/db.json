@@ -3,6 +3,7 @@
     {
       "id": "1",
       "username": "Alan Garcia II La Venganza",
+      "telefono": "994879805",
       "dni": "05898635",
       "password": "1234",
       "admin": true
@@ -11,6 +12,7 @@
       "id": "2",
       "idAdmin": "1",
       "username": "Peter Castle VI",
+      "telefono": "994879849",
       "dni": "79848950",
       "admin": false
     },
@@ -18,15 +20,25 @@
       "id": "3",
       "idAdmin": "4",
       "username": "Ricolas Quispe Maldini",
+      "telefono": "994487805",
       "dni": "98467905",
       "admin": false
     },
     {
       "id": "4",
       "username": "Jesus Andres Lujan Carrion",
+      "telefono": "994879798",
       "dni": "74294745",
       "password": "1234",
       "admin": true
+    },
+    {
+      "id": "5",
+      "idAdmin": "4",
+      "username": "Pablito de los Backyordigans",
+      "telefono": "978459824",
+      "dni": "48798507",
+      "admin": false
     }
   ],
   "credits": [
@@ -76,7 +88,7 @@
     },
     {
       "id": "5",
-      "idCustomer": "3",
+      "idCustomer": "5",
       "costoTotal": 300,
       "tasa": 2,
       "Mora": true,

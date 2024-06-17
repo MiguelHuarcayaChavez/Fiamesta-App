@@ -19,5 +19,10 @@ export class AuthService {
     return this.http.get(`${this.baseUrl}/users?dni=${dni}`)
   }
 
+  //Devuelve todos los users que tengan en el campo idAdmin el id que le pasamos (del admin xd)
+  findCustomersByAdminId(idAdmin:any){
+    return this.http.get(`${this.baseUrl}/users?idAdmin=${idAdmin}`)
+  }
+
 
 }
