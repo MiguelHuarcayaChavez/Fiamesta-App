@@ -54,4 +54,15 @@ export class CustomersListComponent {
     this.numeroDeComprasTotales.push(numerosCreditosHechos)
     this.TotalEnDeuda.push(totalDebe)
   }
+
+  //Botones
+  addCustomer(){
+    this.router.navigate([ this.user.dni,`add-customer`])
+  }
+
+  viewCustomerDetails(idCustomer: any){
+    this.router.navigate([ idCustomer,`add-customer`])
+  }
+
+
 }

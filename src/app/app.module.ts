@@ -19,6 +19,11 @@ import { PgHomeAdminComponent } from './home/pages/pg-home-admin/pg-home-admin.c
 import { PgHomeCustomerComponent } from './home/pages/pg-home-customer/pg-home-customer.component';
 import { CurrentAccountComponent } from './home/components/current-account/current-account.component';
 import { CustomersListComponent } from './home/components/customers-list/customers-list.component';
+import { PgAddCustomerComponent } from './service-execution/customer-management/pages/pg-add-customer/pg-add-customer.component';
+import { PgCustomerDetailsComponent } from './service-execution/customer-management/pages/pg-customer-details/pg-customer-details.component';
+import { PgModifyCustomerDataComponent } from './service-execution/customer-management/pages/pg-modify-customer-data/pg-modify-customer-data.component';
+import { AddCustomerComponent } from './service-execution/customer-management/components/add-customer/add-customer.component';
+import { CustomerDetailsComponent } from './service-execution/customer-management/components/customer-details/customer-details.component';
 
 
 @NgModule({
@@ -38,6 +43,11 @@ import { CustomersListComponent } from './home/components/customers-list/custome
     PgHomeCustomerComponent,
     CurrentAccountComponent,
     CustomersListComponent,
+    PgAddCustomerComponent,
+    PgCustomerDetailsComponent,
+    PgModifyCustomerDataComponent,
+    AddCustomerComponent,
+    CustomerDetailsComponent,
   ],
   imports: [
     BrowserModule,
