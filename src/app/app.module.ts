@@ -24,6 +24,7 @@ import { PgCustomerDetailsComponent } from './service-execution/customer-managem
 import { PgModifyCustomerDataComponent } from './service-execution/customer-management/pages/pg-modify-customer-data/pg-modify-customer-data.component';
 import { AddCustomerComponent } from './service-execution/customer-management/components/add-customer/add-customer.component';
 import { CustomerDetailsComponent } from './service-execution/customer-management/components/customer-details/customer-details.component';
+import { HeaderGenericSectionComponent } from './public/components/header-generic-section/header-generic-section.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { CustomerDetailsComponent } from './service-execution/customer-managemen
     PgModifyCustomerDataComponent,
     AddCustomerComponent,
     CustomerDetailsComponent,
+    HeaderGenericSectionComponent,
   ],
   imports: [
     BrowserModule,
