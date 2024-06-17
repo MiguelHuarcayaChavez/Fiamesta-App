@@ -1,1 +1,25 @@
-<p>current-account works!</p>
+<div class="container">
+  <div class="fade-in-container">
+    <h1 class="center">CUENTA CORRIENTE</h1>
+    <div *ngFor="let credit of credits">
+      <div class="credit-container">
+        <div class="credit-header">
+          Compra hecha el:
+        </div>
+        <div class="credit-details">
+          <div class="left-section">
+            <h2>Productos:</h2>
+            <p>{{credit.descripcionCompra}}</p>
+          </div>
+          <div class="right-section">
+            <p>Costo total:{{credit.costoTotal}} </p>
+            <p>Tasa: {{credit.tasa}}</p>
+            <p>Mora: {{credit.Mora}}</p>
+            <p>Total a pagar: {{credit.totalPagar}}</p>
+            <p>Fecha límite: {{credit.fechaLimite}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

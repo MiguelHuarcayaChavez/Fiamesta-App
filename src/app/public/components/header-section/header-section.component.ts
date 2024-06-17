@@ -16,9 +16,7 @@ export class HeaderSectionComponent {
   }
 
   ngOnInit(){
-    console.log(this.user.dni)
     this.api.findUserByDni(this.user.dni).subscribe((data:any)=>{
-      console.log(data)
       this.user.username = data[0].username;
     })
   }

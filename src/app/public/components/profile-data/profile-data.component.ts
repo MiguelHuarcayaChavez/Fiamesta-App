@@ -16,7 +16,6 @@ export class ProfileDataComponent {
   }
 
   ngOnInit(){
-    console.log(this.user.dni)
     this.api.findUserByDni(this.user.dni).subscribe((data:any)=>{
       this.user.username = data[0].username;
       this.user.dni = data[0].dni;
