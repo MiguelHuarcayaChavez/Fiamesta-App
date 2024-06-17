@@ -18,7 +18,7 @@ import { ProfileDataComponent } from './public/components/profile-data/profile-d
 import { PgHomeAdminComponent } from './home/pages/pg-home-admin/pg-home-admin.component';
 import { PgHomeCustomerComponent } from './home/pages/pg-home-customer/pg-home-customer.component';
 import { CurrentAccountComponent } from './home/components/current-account/current-account.component';
-import { CreditComponent } from './home/components/credit/credit.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { CreditComponent } from './home/components/credit/credit.component';
     PgHomeAdminComponent,
     PgHomeCustomerComponent,
     CurrentAccountComponent,
-    CreditComponent
   ],
   imports: [
     BrowserModule,
