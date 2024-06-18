@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import {UserEntity} from "../../../../auth/model/user.entity";
-import {ActivatedRoute, Router} from "@angular/router";
-import {HomeService} from "../../../../home/services/home.service";
-import {AuthService} from "../../../../auth/services/auth.service";
-import {Location} from "@angular/common";
-import {firstValueFrom} from "rxjs";
+import { UserEntity } from "../../../../auth/model/user.entity";
+import { ActivatedRoute, Router } from "@angular/router";
+import { HomeService } from "../../../../home/services/home.service";
+import { AuthService } from "../../../../auth/services/auth.service";
+import { Location } from "@angular/common";
+import { firstValueFrom } from "rxjs";
 
 @Component({
   selector: 'app-modify-customer',
   templateUrl: './modify-customer.component.html',
-  styleUrl: './modify-customer.component.css'
+  styleUrls: ['./modify-customer.component.css']
 })
 export class ModifyCustomerComponent {
+  aux: string = '';
   user: UserEntity = {} as UserEntity;
   error: boolean = false;
   error_msg: string = '';
@@ -24,6 +25,13 @@ export class ModifyCustomerComponent {
     private location: Location
   ) {
     this.user.id = this.route.snapshot.params['id-customer'];
+    this.loadUserData();
+  }
+
+  async loadUserData() {
+    const data: any = await firstValueFrom(this.apiAuth.findUserByIdCustomer(this.user.id));
+    this.user = { ...data[0] }; // Load user data into user object
+    this.aux = this.user.dni; // Assign the user's DNI to aux
   }
 
   async ConfirmChangue() {
@@ -40,19 +48,18 @@ export class ModifyCustomerComponent {
         creditLimit: this.user.creditLimit
       };
 
-      this.apiAuth.modifyCustomer(json,this.user.id).subscribe((data) => {
+      this.apiAuth.modifyCustomer(json, this.user.id).subscribe((data) => {
         console.log(data);
-        this.router.navigate([ this.user.dni,`details-customer`])
+        this.router.navigate([this.user.dni, 'details-customer']);
       });
     }
   }
 
-  async foundIdAdmin(){
+  async foundIdAdmin() {
     const data: any = await firstValueFrom(this.apiAuth.findUserByIdCustomer(this.user.id));
     this.user.id = data[0].id;
     this.user.idAdmin = data[0].idAdmin;
   }
-
 
   errors() {
     this.error = false;
@@ -76,7 +83,26 @@ export class ModifyCustomerComponent {
     }
   }
 
-  DeleteCostumer(){
+  async DeleteCustomer() {
+    await this.foundIdAdmin();
+    await this.foundDniAdminFromCustomeridAdmin();
+    this.apiAuth.deleteUserById(this.user.id).subscribe({
+      next: (data) => {
+        console.log(data);
+        //Enviar dni del admin
+        this.router.navigate([ this.aux ,`home-admin`]);
+      },
+      error: (err) => {
+        console.error(err);
+        this.error = true;
+        this.error_msg = 'Error al eliminar el cliente';
+      }
+    });
+  }
 
+
+  async foundDniAdminFromCustomeridAdmin(){
+    const data: any = await firstValueFrom(this.apiAuth.findUserIdByIdAdmin(this.user.idAdmin));
+    this.aux = data[0].dni;
   }
 }

@@ -31,4 +31,12 @@ export class AuthService {
    findUserByIdCustomer(idCustomer:any){
      return this.http.get(`${this.baseUrl}/users?id=${idCustomer}`)
    }
+
+   deleteUserById(idUser:any){
+    return this.http.delete(`${this.baseUrl}/users/${idUser}`)
+   }
+
+   findUserIdByIdAdmin(idAdminFronCustomer:any){
+     return this.http.get(`${this.baseUrl}/users?id=${idAdminFronCustomer}`)
+   }
 }
