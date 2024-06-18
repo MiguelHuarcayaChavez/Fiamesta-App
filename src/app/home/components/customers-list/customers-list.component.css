@@ -54,15 +54,29 @@ body {
   padding: 10px;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-section {
+  flex: 0 0 60px; /* Ajusta el tamaño de la columna del ícono */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customer-icon {
+  color: black; /* Color negro */
+
 }
 
 .left-section {
   flex: 1;
+  padding-left: 10px; /* Añadimos padding para que no quede pegado al icono */
 }
 
 .right-section {
-  flex: 2;
+  flex: 1;
+  padding-left: 10px; /* Añadimos padding para que no quede pegado a la sección izquierda */
 }
 
 .right-section p {
@@ -85,7 +99,6 @@ h2, p {
   font-weight: bold;
 }
 
-
 .details-button {
   background-color: #80BD72;
   color: black;
@@ -97,7 +110,6 @@ h2, p {
   margin-top: 10px;
   font-weight: bold;
 }
-
 
 .add-customer-button:hover,
 .details-button:hover {

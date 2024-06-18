@@ -61,7 +61,7 @@ export class CustomersListComponent {
   }
 
   viewCustomerDetails(idCustomer: any){
-    this.router.navigate([ idCustomer,`add-customer`])
+    this.router.navigate([ idCustomer,`details-customer`])
   }
 
 

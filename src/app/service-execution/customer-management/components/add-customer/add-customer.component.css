@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.fade-in-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px 20px;
+  background-color: #808080; /* Color gris */
+  color: white;
+  opacity: 0;
+  animation: fadeIn 2s forwards; /* Animación de fade-in de 2 segundos */
+  border-radius: 8px; /* Bordes redondeados opcionales */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Tres columnas */
+  gap: 20px; /* Espacio entre columnas */
+  width: 100%;
+  margin-top: 20px;
+}
+
+.icon-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-icon {
+  width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: auto; /* Mantén la proporción de la imagen */
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-section label {
+  color: white;
+  font-weight: bold;
+}
+
+.form-section input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-button {
+  background-color: #D65496;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.add-button:hover {
+  background-color: #AE5F10;
+}

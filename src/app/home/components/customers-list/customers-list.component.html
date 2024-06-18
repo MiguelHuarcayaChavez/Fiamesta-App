@@ -8,16 +8,18 @@
           <p>ID del Cliente: {{ customer.id }}</p>
         </div>
         <div class="customer-details">
+          <div class="icon-section">
+            <mat-icon class="customer-icon">account_circle</mat-icon>
+          </div>
           <div class="left-section">
             <p>DNI: {{ customer.dni }}</p>
             <p>Nombre: {{ customer.username }}</p>
             <p>Teléfono: {{ customer.telefono }}</p>
-            <!--Solo si hay tiempo<p>Moroso: </p>-->
           </div>
           <div class="right-section">
             <p>Número de créditos hechos: {{ numeroDeComprasTotales[i] }}</p>
             <p>Total que debe: {{ TotalEnDeuda[i] }}</p>
-            <button class="details-button" (click)="viewCustomerDetails(customer.id)">Más detalles</button>
+            <button class="details-button" (click)="viewCustomerDetails(customer.dni)">Más detalles</button>
           </div>
         </div>
       </div>

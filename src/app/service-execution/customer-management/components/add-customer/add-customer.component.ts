@@ -1,25 +1,69 @@
 import { Component } from '@angular/core';
-import {UserEntity} from "../../../../auth/model/user.entity";
-import {ActivatedRoute, Router} from "@angular/router";
-import {HomeService} from "../../../../home/services/home.service";
-import {AuthService} from "../../../../auth/services/auth.service";
+import { UserEntity } from "../../../../auth/model/user.entity";
+import { ActivatedRoute, Router } from "@angular/router";
+import { HomeService } from "../../../../home/services/home.service";
+import { AuthService } from "../../../../auth/services/auth.service";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-add-customer',
   templateUrl: './add-customer.component.html',
-  styleUrl: './add-customer.component.css'
+  styleUrls: ['./add-customer.component.css']
 })
 export class AddCustomerComponent {
   user: UserEntity = {} as UserEntity;
-
+  error: boolean = false;
+  error_msg: string = '';
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private apiHome: HomeService,
-    private apiAuth: AuthService
+    private apiAuth: AuthService,
+    private location: Location
   ) {
-    this.user.dni = this.route.snapshot.params['dni-admin'];
+    this.user.idAdmin = this.route.snapshot.params['dni-admin'];
   }
 
+  async addCustomer() {
+    this.errors();
+
+    if (!this.error) {
+      const json = {
+        idAdmin: this.user.idAdmin,
+        username: this.user.username,
+        telefono: this.user.telefono,
+        dni: this.user.dni,
+        admin: false,
+        creditLimit: this.user.creditLimit
+      };
+
+      this.apiAuth.createUser(json).subscribe((data) => {
+        console.log(data);
+        this.location.back();
+      });
+    }
+  }
+
+  errors() {
+    this.error = false;
+    this.error_msg = '';
+
+    if (!this.user.dni.trim()) {
+      this.error = true;
+      this.error_msg = 'Ingrese el DNI del cliente nuevo';
+    }
+    if (!this.user.username.trim()) {
+      this.error = true;
+      this.error_msg = 'Ingrese el Nombre del cliente nuevo';
+    }
+    if (!this.user.telefono.trim() || this.user.telefono.length > 9) {
+      this.error = true;
+      this.error_msg = 'Ingrese un Teléfono válido (hasta 9 dígitos)';
+    }
+    if (this.user.creditLimit == null || this.user.creditLimit <= 0) {
+      this.error = true;
+      this.error_msg = 'Ingrese un Límite de Crédito válido (mayor que cero)';
+    }
+  }
 }

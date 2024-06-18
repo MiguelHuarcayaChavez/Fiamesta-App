@@ -14,7 +14,8 @@
       "username": "Peter Castle VI",
       "telefono": "994879849",
       "dni": "79848950",
-      "admin": false
+      "admin": false,
+      "creditLimit": 800
     },
     {
       "id": "3",
@@ -22,7 +23,8 @@
       "username": "Ricolas Quispe Maldini",
       "telefono": "994487805",
       "dni": "98467905",
-      "admin": false
+      "admin": false,
+      "creditLimit": 500
     },
     {
       "id": "4",
@@ -38,7 +40,8 @@
       "username": "Pablito de los Backyordigans",
       "telefono": "978459824",
       "dni": "48798507",
-      "admin": false
+      "admin": false,
+      "creditLimit": 480
     }
   ],
   "credits": [

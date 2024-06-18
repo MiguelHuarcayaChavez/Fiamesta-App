@@ -1,2 +1,45 @@
 <p>customer-details works!</p>
-<h1>{{user.id}}</h1>
+<h1>{{user.dni}}</h1>
+
+<div class="container">
+  <div class="fade-in-container">
+    <h1 class="center">DATOS CLIENTE</h1>
+    <div class="customer-details">
+      <div class="icon-section">
+        <img src="./assets/user-icon.png" alt="user-icon" class="user-icon">
+      </div>
+      <div class="middle-section">
+        <p>DNI: {{user.dni}}</p>
+        <p>Nombre: {{user.username}}</p>
+        <p>Teléfono: {{user.telefono}}</p>
+      </div>
+      <div class="button-section">
+        <button class="details-button" (click)="ModifyCustomer()">Modificar Datos</button>
+      </div>
+    </div>
+
+    <h1 class="center">CREDITOS DEL CLIENTE</h1>
+    <div *ngFor="let credit of credits">
+      <div class="credit-container">
+        <div class="credit-header">
+          <p>Compra: </p>
+          <button class="details-button" (click)="ModifyCredit(credit.id)">Modificar Credito</button>
+        </div>
+        <div class="credit-details">
+          <div class="left-section">
+            <h2>Productos:</h2>
+            <p>{{credit.descripcionCompra}}</p>
+          </div>
+          <div class="right-section">
+            <p>Costo total: {{credit.costoTotal}}</p>
+            <p>Tasa: {{credit.tasa}}</p>
+            <p>Mora: {{credit.Mora}}</p>
+            <p>Total a pagar: {{credit.totalPagar}}</p>
+            <p>Fecha límite: {{credit.fechaLimite}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="details-button" (click)="AddCredit()">Añadir Credito</button>
+  </div>
+</div>

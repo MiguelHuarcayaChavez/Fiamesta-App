@@ -16,6 +16,10 @@ import {
 import {
   PgCustomerDetailsComponent
 } from "./service-execution/customer-management/pages/pg-customer-details/pg-customer-details.component";
+import {PgAddCreditComponent} from "./service-execution/credit-management/pages/pg-add-credit/pg-add-credit.component";
+import {
+  PgModifyCreditComponent
+} from "./service-execution/credit-management/pages/pg-modify-credit/pg-modify-credit.component";
 
 
 
@@ -30,8 +34,12 @@ const routes: Routes = [
 
   //Customer Management
   {path: ':dni-admin/add-customer', component: PgAddCustomerComponent },
-  {path: ':id-customer/details-customer', component: PgCustomerDetailsComponent },
+  {path: ':dni-customer/details-customer', component: PgCustomerDetailsComponent },
   {path: ':id-customer/modify-customer', component: PgModifyCustomerDataComponent },
+
+  //Credit Management
+  {path: ':id-customer/add-credit', component: PgAddCreditComponent },
+  {path: ':id-credit/modify-credit', component: PgModifyCreditComponent },
 
   //Register and Default
   {path: 'register', component: PgRegisterComponent},

@@ -25,7 +25,10 @@ import { PgModifyCustomerDataComponent } from './service-execution/customer-mana
 import { AddCustomerComponent } from './service-execution/customer-management/components/add-customer/add-customer.component';
 import { CustomerDetailsComponent } from './service-execution/customer-management/components/customer-details/customer-details.component';
 import { HeaderGenericSectionComponent } from './public/components/header-generic-section/header-generic-section.component';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatIconModule} from "@angular/material/icon";
+import { PgModifyCreditComponent } from './service-execution/credit-management/pages/pg-modify-credit/pg-modify-credit.component';
+import { PgAddCreditComponent } from './service-execution/credit-management/pages/pg-add-credit/pg-add-credit.component';
 
 @NgModule({
   declarations: [
@@ -50,14 +53,19 @@ import { HeaderGenericSectionComponent } from './public/components/header-generi
     AddCustomerComponent,
     CustomerDetailsComponent,
     HeaderGenericSectionComponent,
+    PgModifyCreditComponent,
+    PgAddCreditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule, // Añadir FormsModule
+    MatIconModule,
     HttpClientModule // Añadir HttpClientModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
