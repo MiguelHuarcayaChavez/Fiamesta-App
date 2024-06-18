@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="fade-in-container">
+    <h3 class="center">MODIFICAR / ELIMINAR DATOS CLIENTE</h3>
+    <div class="grid-container">
+      <div class="icon-section">
+        <img src="./assets/user-icon.png" alt="user-icon" class="user-icon">
+      </div>
+      <div class="form-section">
+        <label for="dni">DNI Cliente:</label>
+        <input id="dni" type="text" [(ngModel)]="user.dni" pattern="[0-9]{1,8}" title="Por favor, ingrese hasta 8 dígitos numéricos" maxlength="8" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+
+        <label for="name">Nombre:</label>
+        <input id="name" type="text" [(ngModel)]="user.username">
+
+        <label for="phone">Teléfono:</label>
+        <input id="phone" type="text" [(ngModel)]="user.telefono" pattern="[0-9]{1,9}" title="Por favor, ingrese hasta 9 dígitos numéricos" maxlength="9" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+
+        <label for="credit-limit">Límite de Crédito:</label>
+        <input id="credit-limit" type="number" [(ngModel)]="user.creditLimit" min="1">
+
+        <div class="alert alert-danger" *ngIf="error">
+          {{ error_msg }}
+        </div>
+      </div>
+      <div class="button-section">
+        <button class="changues-button" (click)="ConfirmChangue()">Confirmar Cambios</button>
+        <button class="delete-button" (click)="DeleteCostumer()">Eliminar Cliente</button>
+      </div>
+    </div>
+  </div>
+</div>

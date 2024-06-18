@@ -24,5 +24,11 @@ export class AuthService {
     return this.http.get(`${this.baseUrl}/users?idAdmin=${idAdmin}`)
   }
 
+   modifyCustomer(jsonCustomer:any, idCustomer:any){
+     return this.http.put(`${this.baseUrl}/users/${idCustomer}`,jsonCustomer)
+   }
 
+   findUserByIdCustomer(idCustomer:any){
+     return this.http.get(`${this.baseUrl}/users?id=${idCustomer}`)
+   }
 }

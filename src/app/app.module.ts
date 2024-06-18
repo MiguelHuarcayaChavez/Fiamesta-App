@@ -29,6 +29,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {MatIconModule} from "@angular/material/icon";
 import { PgModifyCreditComponent } from './service-execution/credit-management/pages/pg-modify-credit/pg-modify-credit.component';
 import { PgAddCreditComponent } from './service-execution/credit-management/pages/pg-add-credit/pg-add-credit.component';
+import { ModifyCustomerComponent } from './service-execution/customer-management/components/modify-customer/modify-customer.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { PgAddCreditComponent } from './service-execution/credit-management/page
     HeaderGenericSectionComponent,
     PgModifyCreditComponent,
     PgAddCreditComponent,
+    ModifyCustomerComponent,
   ],
   imports: [
     BrowserModule,

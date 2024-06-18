@@ -1,9 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 .fade-in-container {
   width: 100%;
   max-width: 1200px;
@@ -53,6 +47,43 @@ body {
   height: auto; /* Mantén la proporción de la imagen */
 }
 
+.button-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.changues-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.changues-button:hover {
+  background-color: #AE5F10;
+}
+
+.delete-button{
+  background-color: red;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.delete-button:hover {
+  background-color: #AE5F10;
+}
+
 .form-section {
   display: flex;
   flex-direction: column;
@@ -69,27 +100,6 @@ body {
   border: none;
   border-radius: 5px;
   font-size: 16px;
-}
-
-.button-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.add-button {
-  background-color: #D65496;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.add-button:hover {
-  background-color: #AE5F10;
 }
 
 /* Alertas */

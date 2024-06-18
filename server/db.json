@@ -20,16 +20,16 @@
     {
       "id": "3",
       "idAdmin": "4",
-      "username": "Ricolas Quispe Maldini",
-      "telefono": "994487805",
-      "dni": "98467905",
+      "username": "Ricolas Mamani Maldini",
+      "telefono": "967778836",
+      "dni": "72432906",
       "admin": false,
       "creditLimit": 500
     },
     {
       "id": "4",
-      "username": "Jesus Andres Lujan Carrion",
-      "telefono": "994879798",
+      "username": "Mayimbu Lujan Carrion",
+      "telefono": "967778894",
       "dni": "74294745",
       "password": "1234",
       "admin": true

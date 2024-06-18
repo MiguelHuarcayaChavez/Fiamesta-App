@@ -60,8 +60,8 @@ export class CustomersListComponent {
     this.router.navigate([ this.user.dni,`add-customer`])
   }
 
-  viewCustomerDetails(idCustomer: any){
-    this.router.navigate([ idCustomer,`details-customer`])
+  viewCustomerDetails(dniCustomer: any){
+    this.router.navigate([ dniCustomer,`details-customer`])
   }
 
 
