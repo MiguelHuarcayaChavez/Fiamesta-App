@@ -18,4 +18,15 @@ export class HomeService {
     return this.http.post(`${this.baseUrl}/credits`,json)
   }
 
+  modifyCredit(jsonCredit:any, idCredit:any){
+    return this.http.put(`${this.baseUrl}/credits/${idCredit}`,jsonCredit)
+  }
+
+  deleteCredit(idCredit:any){
+    return this.http.delete(`${this.baseUrl}/credits/${idCredit}`)
+  }
+  getCreditById(idCredit:any){
+    return this.http.get(`${this.baseUrl}/credits?id=${idCredit}`)
+  }
+
 }

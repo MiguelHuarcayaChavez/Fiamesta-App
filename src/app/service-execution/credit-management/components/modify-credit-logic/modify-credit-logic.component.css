@@ -1,0 +1,67 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.fade-in-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.icon-section {
+  text-align: center;
+}
+
+.credit-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.form-section label {
+  display: block;
+  margin-top: 10px;
+}
+
+.form-section input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.button-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.modify-button, .delete-button {
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+.modify-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.alert {
+  margin-top: 10px;
+}
