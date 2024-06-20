@@ -1,11 +1,11 @@
 export class CreditEntity {
   id: string;
   idCustomer: string;
-  costoTotal: number | null;
-  tasa: number | null;
-  Mora: true | null;
-  totalPagar: number | null;
-  fechaLimite: string;
+  costoTotal: number;
+  tasa: number;
+  Mora: boolean;
+  totalPagar: number;
+  mesesParaPagar: number;
   tipoTasa: string;
   descripcionCompra: string;
   diferido: boolean;
@@ -13,11 +13,11 @@ export class CreditEntity {
   constructor() {
     this.id='';
     this.idCustomer='';
-    this.costoTotal=null;
-    this.tasa=null;
-    this.Mora=null;
-    this.totalPagar=null;
-    this.fechaLimite='';
+    this.costoTotal=0;
+    this.tasa=0;
+    this.Mora=false;
+    this.totalPagar=0;
+    this.mesesParaPagar=0;
     this.tipoTasa='';
     this.descripcionCompra='';
     this.diferido = false;
