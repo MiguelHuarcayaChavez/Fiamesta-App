@@ -54,7 +54,9 @@
       "totalPagar": 5000,
       "fechaLimite": "05-10-2024",
       "tipoTasa": "nominal",
-      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
+      "diferido": false,
+      "periodoGracia": 0
     },
     {
       "id": "2",
@@ -65,7 +67,9 @@
       "totalPagar": 5000,
       "fechaLimite": "05-08-2024",
       "tipoTasa": "nominal",
-      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
+      "diferido": false,
+      "periodoGracia": 0
     },
     {
       "id": "3",
@@ -76,7 +80,9 @@
       "totalPagar": 5000,
       "fechaLimite": "05-02-2024",
       "tipoTasa": "nominal",
-      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
+      "diferido": false,
+      "periodoGracia": 0
     },
     {
       "id": "4",
@@ -87,7 +93,9 @@
       "totalPagar": 5000,
       "fechaLimite": "05-02-2024",
       "tipoTasa": "nominal",
-      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
+      "diferido": false,
+      "periodoGracia": 0
     },
     {
       "id": "5",
@@ -98,7 +106,9 @@
       "totalPagar": 5000,
       "fechaLimite": "05-02-2024",
       "tipoTasa": "nominal",
-      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos"
+      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
+      "diferido": false,
+      "periodoGracia": 0
     }
   ]
 }

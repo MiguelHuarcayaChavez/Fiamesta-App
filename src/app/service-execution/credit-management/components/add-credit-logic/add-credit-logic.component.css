@@ -1,0 +1,92 @@
+.fade-in-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px 20px;
+  background-color: #808080; /* Color gris */
+  color: white;
+  opacity: 0;
+  animation: fadeIn 2s forwards; /* Animación de fade-in de 2 segundos */
+  border-radius: 8px; /* Bordes redondeados opcionales */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.icon-section {
+  text-align: center;
+}
+
+.credit-icon {
+  width: 100px; /* Ajustar tamaño según necesidad */
+  height: auto;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="number"],
+input[type="date"],
+input[type="text"],
+select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-left: 10px;
+}
+
+.button-section {
+  text-align: center;
+}
+
+.add-button {
+  background-color: #D65496; /* Color del botón */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-button:hover {
+  background-color: #C04B88; /* Color al pasar el cursor */
+}
+
+.alert {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f44336; /* Color de fondo del mensaje de error */
+  color: white;
+  border-radius: 4px;
+}

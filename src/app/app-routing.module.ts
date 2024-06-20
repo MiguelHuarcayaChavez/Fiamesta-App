@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: ':dni-customer/details-customer', component: PgCustomerDetailsComponent },
   {path: ':id-customer/modify-customer', component: PgModifyCustomerDataComponent },
 
-  //Credit Management
+  //Credit Management**************
   {path: ':id-customer/add-credit', component: PgAddCreditComponent },
   {path: ':id-credit/modify-credit', component: PgModifyCreditComponent },
 

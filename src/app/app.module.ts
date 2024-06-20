@@ -30,6 +30,8 @@ import {MatIconModule} from "@angular/material/icon";
 import { PgModifyCreditComponent } from './service-execution/credit-management/pages/pg-modify-credit/pg-modify-credit.component';
 import { PgAddCreditComponent } from './service-execution/credit-management/pages/pg-add-credit/pg-add-credit.component';
 import { ModifyCustomerComponent } from './service-execution/customer-management/components/modify-customer/modify-customer.component';
+import { AddCreditLogicComponent } from './service-execution/credit-management/components/add-credit-logic/add-credit-logic.component';
+import { ModifyCreditLogicComponent } from './service-execution/credit-management/components/modify-credit-logic/modify-credit-logic.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { ModifyCustomerComponent } from './service-execution/customer-management
     PgModifyCreditComponent,
     PgAddCreditComponent,
     ModifyCustomerComponent,
+    AddCreditLogicComponent,
+    ModifyCreditLogicComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,8 @@ export class CreditEntity {
   fechaLimite: string;
   tipoTasa: string;
   descripcionCompra: string;
+  diferido: boolean;
+  periodoGracia: number;
   constructor() {
     this.id='';
     this.idCustomer='';
@@ -18,6 +20,8 @@ export class CreditEntity {
     this.fechaLimite='';
     this.tipoTasa='';
     this.descripcionCompra='';
+    this.diferido = false;
+    this.periodoGracia = 0;
 
   }
 }

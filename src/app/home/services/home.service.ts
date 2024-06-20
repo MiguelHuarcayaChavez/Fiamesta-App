@@ -14,5 +14,8 @@ export class HomeService {
   findAllCreditsByIdCustomer(idCustomer:any){
     return this.http.get(`${this.baseUrl}/credits?idCustomer=${idCustomer}`)
   }
+  createCredit(json:any){
+    return this.http.post(`${this.baseUrl}/credits`,json)
+  }
 
 }
