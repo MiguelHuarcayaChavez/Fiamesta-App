@@ -2,6 +2,7 @@
   "users": [
     {
       "id": "1",
+      "idAdmin": "0",
       "username": "Alan Garcia II La Venganza",
       "telefono": "994879805",
       "dni": "05898635",
@@ -20,7 +21,7 @@
     {
       "id": "3",
       "idAdmin": "4",
-      "username": "Ricolas Mamani Maldini",
+      "username": "Ricolas Mamani Quispe",
       "telefono": "967778836",
       "dni": "72432906",
       "admin": false,
@@ -28,6 +29,7 @@
     },
     {
       "id": "4",
+      "idAdmin": "0",
       "username": "Mayimbu Lujan Carrion",
       "telefono": "967778894",
       "dni": "74294745",
@@ -109,6 +111,17 @@
       "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
       "diferido": false,
       "periodoGracia": 0
+    },
+    {
+      "idCustomer": "3",
+      "costoTotal": 150,
+      "tasa": 3,
+      "Mora": false,
+      "totalPagar": 163.76592855043188,
+      "mesesParaPagar": 5,
+      "tipoTasa": "nominal",
+      "descripcionCompra": "3 cajas de chelitas",
+      "id": "b96b"
     }
   ]
 }

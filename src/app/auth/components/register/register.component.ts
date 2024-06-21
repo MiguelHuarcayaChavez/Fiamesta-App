@@ -21,6 +21,7 @@ export class RegisterComponent {
 
     if (!this.error) {
       const json = {
+        idAdmin: 0,
         username: this.user.username,
         dni: this.user.dni,
         password: this.user.password,

@@ -31,6 +31,7 @@ export class CustomersListComponent {
 
   async foundCustomers() {
     await this.foundIdAdmin();
+    console.log(this.user.id)
     this.apiAuth.findCustomersByAdminId(this.user.id).subscribe(async(data: any) => {
       data.map(async (data:any)=>{
         this.customers.push(data)
@@ -41,6 +42,7 @@ export class CustomersListComponent {
   async foundIdAdmin() {
     const data: any = await firstValueFrom(this.apiAuth.findUserByDni(this.user.dni));
     this.user.id = data[0].id;
+
   }
 
   async foundCreditsAndTotal(idCustomer: any){
@@ -57,7 +59,7 @@ export class CustomersListComponent {
 
   //Botones
   addCustomer(){
-    this.router.navigate([ this.user.dni,`add-customer`])
+    this.router.navigate([ this.user.id,`add-customer`])
   }
 
   viewCustomerDetails(dniCustomer: any){
