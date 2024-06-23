@@ -107,18 +107,16 @@
       "timeCategory": "meses"
     },
     {
-      "id": "5",
       "idCustomer": "5",
-      "costoTotal": 300,
-      "tasa": 2,
-      "Mora": 5,
-      "totalPagar": 5000,
-      "mesesParaPagar": 1,
+      "costoTotal": 200,
+      "tasa": 6,
+      "Mora": 0,
+      "totalPagar": 200.72954133716055,
+      "mesesParaPagar": 2,
       "tipoTasa": "nominal",
-      "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
-      "diferido": false,
-      "periodoGracia": 0,
-      "timeCategory": "meses"
+      "descripcionCompra": "2 cajas cerveza",
+      "timeCategory": "quincenas",
+      "id": "7fb8"
     }
   ]
 }

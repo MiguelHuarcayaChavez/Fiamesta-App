@@ -1,49 +1,59 @@
-<div class="container">
-  <div class="fade-in-container">
-    <h1 class="center">MODIFICAR CRÉDITO</h1>
-    <div class="grid-container">
-      <div class="icon-section">
-        <img src="./assets/credit-icon.png" alt="credit-icon" class="credit-icon">
-      </div>
-      <div class="form-section">
-        <form (ngSubmit)="modifyCredit()">
-          <label for="description">Descripción de la Compra:</label>
-          <input id="description" type="text" [(ngModel)]="credit.descripcionCompra" (input)="updateTotalPagar()" name="description" required>
-
-          <label for="total-cost">Costo Total:</label>
-          <input id="total-cost" type="number" [(ngModel)]="credit.costoTotal" (input)="updateTotalPagar()" min="0.01" max="250" step="0.01" name="total-cost" required>
-
-          <label for="rate">Tasa anual (%):</label>
-          <input id="rate" type="number" [(ngModel)]="credit.tasa" (input)="updateTotalPagar()" min="5" max="10" step="0.01" name="rate" required>
-
-          <label for="months">Meses para Pagar:</label>
-          <input id="months" type="number" [(ngModel)]="credit.mesesParaPagar" (input)="updateTotalPagar()" min="1" max="6" step="1" name="months" required>
-
-          <label for="deferred">¿Es diferido?</label>
-          <input id="deferred" type="checkbox" [(ngModel)]="credit.diferido" (change)="updateTotalPagar()" name="deferred">
-
-          <div *ngIf="credit.diferido">
-            <label for="grace-period">Periodo de Gracia en meses:</label>
-            <input id="grace-period" type="number" [(ngModel)]="credit.periodoGracia" (input)="updateTotalPagar()" min="0" max="3" step="1" name="grace-period" required>
-          </div>
-
-          <div *ngIf="cuotas && cuotas.length">
-            <p><strong>Cuotas:</strong></p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Modificar Crédito</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="modifyCredit()">
+            <div class="form-group">
+              <label for="descripcionCompra">Descripción de la Compra</label>
+              <input type="text" id="descripcionCompra" [(ngModel)]="credit.descripcionCompra" name="descripcionCompra" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="costoTotal">Costo Total</label>
+              <input type="number" id="costoTotal" [(ngModel)]="credit.costoTotal" name="costoTotal" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="tasa">Tasa (%)</label>
+              <input type="number" id="tasa" [(ngModel)]="credit.tasa" name="tasa" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="mesesParaPagar">Tiempo para Pagar ({{ timeCategory }})</label>
+              <input type="number" id="mesesParaPagar" [(ngModel)]="credit.mesesParaPagar" name="mesesParaPagar" class="form-control" required (change)="updateTotalPagar()">
+            </div>
+            <div class="form-group">
+              <label for="timeCategory">Categoría de Tiempo</label>
+              <select id="timeCategory" [(ngModel)]="timeCategory" name="timeCategory" class="form-control" (change)="updateTotalPagar()">
+                <option value="semanas">Semanas</option>
+                <option value="quincenas">Quincenas</option>
+                <option value="meses">Meses</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="diferido" [(ngModel)]="credit.diferido" name="diferido" class="form-check-input" (change)="updateTotalPagar()">
+              <label for="diferido" class="form-check-label">Diferido</label>
+            </div>
+            <div class="form-group" *ngIf="credit.diferido">
+              <label for="periodoGracia">Periodo de Gracia ({{ timeCategory }})</label>
+              <input type="number" id="periodoGracia" [(ngModel)]="credit.periodoGracia" name="periodoGracia" class="form-control" required (change)="updateTotalPagar()">
+            </div>
+            <div class="form-group">
+              <label for="totalPagar">Total a Pagar</label>
+              <input type="number" id="totalPagar" [(ngModel)]="credit.totalPagar" name="totalPagar" class="form-control" readonly>
+            </div>
+            <div *ngIf="error" class="alert alert-danger">{{ error_msg }}</div>
+            <button type="submit" class="btn btn-primary">Modificar</button>
+            <button type="button" class="btn btn-danger" (click)="deleteCredit()">Eliminar</button>
+          </form>
+          <div *ngIf="cuotas.length">
+            <h4>Cuotas</h4>
             <ul>
-              <li *ngFor="let cuota of cuotas">{{ cuota | currency }}</li>
+              <li *ngFor="let cuota of cuotas; let i = index">Cuota {{ i + 1 }}: {{ cuota | currency }}</li>
             </ul>
-            <p><strong>Total a Pagar:</strong> {{ credit.totalPagar | currency }}</p>
           </div>
-
-          <div class="alert alert-danger" *ngIf="error">
-            {{ error_msg }}
-          </div>
-
-          <div class="button-section">
-            <button type="submit" class="modify-button">Confirmar Cambios</button>
-            <button type="button" class="delete-button" (click)="deleteCredit()">Eliminar Crédito</button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
