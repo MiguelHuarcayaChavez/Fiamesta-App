@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: ':dni/home-customer', component: PgHomeCustomerComponent },
 
   //Customer Management
-  {path: ':dni-admin/add-customer', component: PgAddCustomerComponent },
+  {path: ':id-admin/add-customer', component: PgAddCustomerComponent },
   {path: ':dni-customer/details-customer', component: PgCustomerDetailsComponent },
   {path: ':id-customer/modify-customer', component: PgModifyCustomerDataComponent },
 

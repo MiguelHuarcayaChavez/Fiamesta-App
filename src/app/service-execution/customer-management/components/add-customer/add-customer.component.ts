@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { HomeService } from "../../../../home/services/home.service";
 import { AuthService } from "../../../../auth/services/auth.service";
 import { Location } from "@angular/common";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-add-customer',
@@ -22,11 +23,12 @@ export class AddCustomerComponent {
     private apiAuth: AuthService,
     private location: Location
   ) {
-    this.user.idAdmin = this.route.snapshot.params['dni-admin'];
+    this.user.idAdmin = this.route.snapshot.params['id-admin'];
+
   }
 
   async addCustomer() {
-    this.errors();
+    await this.errors();
 
     if (!this.error) {
       const json = {
@@ -45,9 +47,17 @@ export class AddCustomerComponent {
     }
   }
 
-  errors() {
+  async errors() {
     this.error = false;
     this.error_msg = '';
+
+    const dniCheck: Observable<any> = this.apiAuth.findUserByDni(this.user.dni);
+    const dniCheckResult = await dniCheck.toPromise();
+
+    if (dniCheckResult[0] !== undefined) {
+      this.error = true;
+      this.error_msg = 'DNI already registered';
+    }
 
     if (!this.user.dni.trim()) {
       this.error = true;
