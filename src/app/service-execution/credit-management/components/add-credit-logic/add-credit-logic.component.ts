@@ -26,6 +26,9 @@ export class AddCreditLogicComponent {
     private apiAuth: AuthService
   ) {
     this.user.id = this.route.snapshot.params['id-customer'];
+    this.apiAuth.findUserByIdCustomer(this.user.id).subscribe((data:any)=>{
+      this.user.creditLimit = data[0].creditLimit
+    })
   }
 
   updateTotalPagar() {
@@ -112,9 +115,9 @@ export class AddCreditLogicComponent {
       this.error = true;
       this.error_msg = 'Ingrese la Descripción de la Compra';
     }
-    if (this.credit.costoTotal == null || this.credit.costoTotal <= 0 || this.credit.costoTotal > 250) {
+    if (this.credit.costoTotal == null || this.credit.costoTotal <= 0 || this.credit.costoTotal > this.user.creditLimit) {
       this.error = true;
-      this.error_msg = 'Ingrese un Costo Total válido (mayor que cero y menor o igual a 250)';
+      this.error_msg = `Ingrese un Costo Total válido (mayor que cero y menor o igual a ${this.user.creditLimit})`;
     }
     if (this.credit.tasa == null || this.credit.tasa <= 0 || this.credit.tasa > 10) {
       this.error = true;

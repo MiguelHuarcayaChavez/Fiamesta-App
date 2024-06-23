@@ -15,7 +15,7 @@
         <label for="phone">Teléfono:</label>
         <input id="phone" type="text" [(ngModel)]="user.telefono" pattern="[0-9]{1,9}" title="Por favor, ingrese hasta 9 dígitos numéricos" maxlength="9" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 
-        <label for="credit-limit">Límite de Crédito:</label>
+        <label for="credit-limit">Límite de Crédito (S/.):</label>
         <input id="credit-limit" type="number" [(ngModel)]="user.creditLimit" min="1">
 
         <div class="alert alert-danger" *ngIf="error">
