@@ -14,6 +14,7 @@ import {firstValueFrom} from "rxjs";
 export class CustomerDetailsComponent {
   user: UserEntity = {} as UserEntity;
   credits: CreditEntity[] = [];
+  interesGenerado: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,16 +31,15 @@ export class CustomerDetailsComponent {
 
   async foundCredits() {
     await this.foundIdCustomer();
-    console.log(this.user.id)
     this.apiHome.findAllCreditsByIdCustomer(this.user.id).subscribe((data: any) => {
       data.map((data:any)=>{
         this.credits.push(data)
+        this.interesGenerado += (data.totalPagar - data.costoTotal)
       })
     });
   }
 
   async foundIdCustomer() {
-    console.log(this.user.dni)
     const data: any = await firstValueFrom(this.apiAuth.findUserByDni(this.user.dni));
     this.user.id = data[0].id;
     this.user.telefono = data[0].telefono;

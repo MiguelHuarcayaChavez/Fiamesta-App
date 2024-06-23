@@ -119,9 +119,9 @@ export class AddCreditLogicComponent {
       this.error = true;
       this.error_msg = `Ingrese un Costo Total válido (mayor que cero y menor o igual a ${this.user.creditLimit})`;
     }
-    if (this.credit.tasa == null || this.credit.tasa <= 0 || this.credit.tasa > 10) {
+    if (this.credit.tasa == null || this.credit.tasa <= 5 || this.credit.tasa > 10) {
       this.error = true;
-      this.error_msg = 'Ingrese una Tasa válida (mayor que cero y menor o igual a 10)';
+      this.error_msg = 'Ingrese una Tasa válida (mayor que 5 y menor o igual a 10)';
     }
     if (this.credit.mesesParaPagar == null || this.credit.mesesParaPagar <= 0 || this.credit.mesesParaPagar > 6) {
       this.error = true;

@@ -12,8 +12,8 @@
         <label for="total-cost">Costo Total:</label>
         <input id="total-cost" type="number" [(ngModel)]="credit.costoTotal" (input)="updateTotalPagar()" min="0.01" max="250" step="0.01" required>
 
-        <label for="rate">Tasa mensual (%):</label>
-        <input id="rate" type="number" [(ngModel)]="credit.tasa" (input)="updateTotalPagar()" min="0" max="10" step="0.01" required>
+        <label for="rate">Tasa anual (%):</label>
+        <input id="rate" type="number" [(ngModel)]="credit.tasa" (input)="updateTotalPagar()" min="5" max="10" step="0.1" required>
 
         <label for="months">Meses para Pagar:</label>
         <input id="months" type="number" [(ngModel)]="credit.mesesParaPagar" (input)="updateTotalPagar()" min="1" max="6" step="1" required>

@@ -33,10 +33,14 @@
             <p>Tasa: {{credit.tasa}} % mensual</p>
             <p>Total a pagar: {{credit.totalPagar}} nuevos soles</p>
             <p>Tiempo programado (meses): {{credit.mesesParaPagar}} mes(es)</p>
+            <p>Interes Generado:{{credit.totalPagar - credit.costoTotal}}</p>
           </div>
         </div>
       </div>
     </div>
+
+    <h1>Suma de intereses generados: {{interesGenerado}}</h1>
+
     <button class="details-button" (click)="AddCredit()">Añadir Credito</button>
   </div>
 </div>
