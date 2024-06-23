@@ -10,6 +10,7 @@ export class CreditEntity {
   descripcionCompra: string;
   diferido: boolean;
   periodoGracia: number;
+  timeCategory: string;
   constructor() {
     this.id='';
     this.idCustomer='';
@@ -22,6 +23,7 @@ export class CreditEntity {
     this.descripcionCompra='';
     this.diferido = false;
     this.periodoGracia = 0;
+    this.timeCategory = '';
 
   }
 }

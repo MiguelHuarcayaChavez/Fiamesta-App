@@ -15,15 +15,23 @@
         <label for="rate">Tasa anual (%):</label>
         <input id="rate" type="number" [(ngModel)]="credit.tasa" (input)="updateTotalPagar()" min="5" max="10" step="0.1" required>
 
-        <label for="months">Meses para Pagar:</label>
-        <input id="months" type="number" [(ngModel)]="credit.mesesParaPagar" (input)="updateTotalPagar()" min="1" max="6" step="1" required>
+        <label for="time-category">Categoría de Tiempo:</label>
+        <select id="time-category" [(ngModel)]="timeCategory" (change)="updateTotalPagar()">
+          <option value="semanas">Semanas</option>
+          <option value="quincenas">Quincenas</option>
+          <option value="meses">Meses</option>
+        </select>
+
+        <label for="time-to-pay">Tiempo de pago:</label>
+        <input id="time-to-pay" type="number" [(ngModel)]="credit.mesesParaPagar" (input)="updateTotalPagar()"
+               [min]="getMinTime()" [max]="getMaxTime()" step="1" required>
 
         <label for="deferred">¿Es diferido?</label>
         <input id="deferred" type="checkbox" [(ngModel)]="credit.diferido" (change)="updateTotalPagar()">
 
         <div *ngIf="credit.diferido">
-          <label for="grace-period">Periodo de Gracia en meses:</label>
-          <input id="grace-period" type="number" [(ngModel)]="credit.periodoGracia" (input)="updateTotalPagar()" min="0" max="3" step="1" required>
+          <label for="grace-period">Periodo de Gracia:</label>
+          <input id="grace-period" type="number" [(ngModel)]="credit.periodoGracia" (input)="updateTotalPagar()" min="0" max="6" step="1" required>
         </div>
 
         <div *ngIf="cuotas && cuotas.length">

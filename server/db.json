@@ -61,7 +61,8 @@
       "tipoTasa": "nominal",
       "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
       "diferido": false,
-      "periodoGracia": 0
+      "periodoGracia": 0,
+      "timeCategory": "meses"
     },
     {
       "id": "2",
@@ -74,7 +75,8 @@
       "tipoTasa": "nominal",
       "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
       "diferido": false,
-      "periodoGracia": 0
+      "periodoGracia": 0,
+      "timeCategory": "meses"
     },
     {
       "id": "3",
@@ -87,7 +89,8 @@
       "tipoTasa": "nominal",
       "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
       "diferido": false,
-      "periodoGracia": 0
+      "periodoGracia": 0,
+      "timeCategory": "meses"
     },
     {
       "id": "4",
@@ -100,7 +103,8 @@
       "tipoTasa": "nominal",
       "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
       "diferido": false,
-      "periodoGracia": 0
+      "periodoGracia": 0,
+      "timeCategory": "meses"
     },
     {
       "id": "5",
@@ -113,18 +117,8 @@
       "tipoTasa": "nominal",
       "descripcionCompra": "1 six pack, 3 cajas, 5 vinos",
       "diferido": false,
-      "periodoGracia": 0
-    },
-    {
-      "idCustomer": "3",
-      "costoTotal": 150,
-      "tasa": 3,
-      "Mora": 5,
-      "totalPagar": 163.76592855043188,
-      "mesesParaPagar": 5,
-      "tipoTasa": "nominal",
-      "descripcionCompra": "3 cajas de chelitas",
-      "id": "b96b"
+      "periodoGracia": 0,
+      "timeCategory": "meses"
     }
   ]
 }
