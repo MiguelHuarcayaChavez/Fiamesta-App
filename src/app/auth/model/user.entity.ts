@@ -7,6 +7,7 @@ export class UserEntity {
   dni: string;
   admin: boolean | undefined;
   creditLimit: number;
+  tasaMora: number;
   constructor() {
     this.id='';
     this.idAdmin = '';
@@ -16,5 +17,6 @@ export class UserEntity {
     this.dni='';
     this.admin= undefined;
     this.creditLimit = 0;
+    this.tasaMora = 0;
   }
 }

@@ -59,6 +59,11 @@ export class AddCustomerComponent {
       this.error_msg = 'DNI already registered';
     }
 
+    if (this.user.tasaMora < 1 || this.user.tasaMora > 10 ) {
+      this.error = true;
+      this.error_msg = 'Tasa de Mora no puede ser menor a 1 ni mayor a 10';
+    }
+
     if (!this.user.dni.trim()) {
       this.error = true;
       this.error_msg = 'Ingrese el DNI del cliente nuevo';

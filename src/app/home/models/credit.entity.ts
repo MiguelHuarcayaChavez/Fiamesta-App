@@ -3,7 +3,7 @@ export class CreditEntity {
   idCustomer: string;
   costoTotal: number;
   tasa: number;
-  Mora: boolean;
+  Mora: number;
   totalPagar: number;
   mesesParaPagar: number;
   tipoTasa: string;
@@ -15,7 +15,7 @@ export class CreditEntity {
     this.idCustomer='';
     this.costoTotal=0;
     this.tasa=0;
-    this.Mora=false;
+    this.Mora=0;
     this.totalPagar=0;
     this.mesesParaPagar=0;
     this.tipoTasa='';

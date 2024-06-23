@@ -44,6 +44,7 @@ export class CustomerDetailsComponent {
     this.user.id = data[0].id;
     this.user.telefono = data[0].telefono;
     this.user.username = data[0].username;
+    this.user.tasaMora = data[0].tasaMora;
   }
 
   ModifyCustomer(){

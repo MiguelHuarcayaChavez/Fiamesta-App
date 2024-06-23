@@ -16,7 +16,8 @@
       "telefono": "994879849",
       "dni": "79848950",
       "admin": false,
-      "creditLimit": 800
+      "creditLimit": 800,
+      "tasaMora": 5
     },
     {
       "id": "3",
@@ -25,7 +26,8 @@
       "telefono": "967778836",
       "dni": "72432906",
       "admin": false,
-      "creditLimit": 500
+      "creditLimit": 500,
+      "tasaMora": 5
     },
     {
       "id": "4",
@@ -43,7 +45,8 @@
       "telefono": "978459824",
       "dni": "48798507",
       "admin": false,
-      "creditLimit": 480
+      "creditLimit": 480,
+      "tasaMora": 5
     }
   ],
   "credits": [
@@ -52,7 +55,7 @@
       "idCustomer": "2",
       "costoTotal": 150,
       "tasa": 2,
-      "Mora": true,
+      "Mora": 5,
       "totalPagar": 5000,
       "mesesParaPagar": 1,
       "tipoTasa": "nominal",
@@ -65,7 +68,7 @@
       "idCustomer": "2",
       "costoTotal": 100,
       "tasa": 4,
-      "Mora": false,
+      "Mora": 5,
       "totalPagar": 5000,
       "mesesParaPagar": 1,
       "tipoTasa": "nominal",
@@ -78,7 +81,7 @@
       "idCustomer": "2",
       "costoTotal": 250,
       "tasa": 2,
-      "Mora": true,
+      "Mora": 5,
       "totalPagar": 5000,
       "mesesParaPagar": 1,
       "tipoTasa": "nominal",
@@ -91,7 +94,7 @@
       "idCustomer": "3",
       "costoTotal": 500,
       "tasa": 2,
-      "Mora": true,
+      "Mora": 5,
       "totalPagar": 5000,
       "mesesParaPagar": 1,
       "tipoTasa": "nominal",
@@ -104,7 +107,7 @@
       "idCustomer": "5",
       "costoTotal": 300,
       "tasa": 2,
-      "Mora": true,
+      "Mora": 5,
       "totalPagar": 5000,
       "mesesParaPagar": 1,
       "tipoTasa": "nominal",
@@ -116,7 +119,7 @@
       "idCustomer": "3",
       "costoTotal": 150,
       "tasa": 3,
-      "Mora": false,
+      "Mora": 5,
       "totalPagar": 163.76592855043188,
       "mesesParaPagar": 5,
       "tipoTasa": "nominal",

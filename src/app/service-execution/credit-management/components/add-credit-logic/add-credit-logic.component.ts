@@ -91,7 +91,7 @@ export class AddCreditLogicComponent {
         idCustomer: this.user.id,
         costoTotal: this.credit.costoTotal,
         tasa: this.credit.tasa,
-        Mora: false,
+        Mora: 0,
         totalPagar: this.credit.totalPagar,
         fechaLimite: this.credit.mesesParaPagar,
         tipoTasa: "nominal",

@@ -45,7 +45,8 @@ export class ModifyCustomerComponent {
         telefono: this.user.telefono,
         dni: this.user.dni,
         admin: false,
-        creditLimit: this.user.creditLimit
+        creditLimit: this.user.creditLimit,
+        tasaMora : this.user.tasaMora
       };
 
       this.apiAuth.modifyCustomer(json, this.user.id).subscribe((data) => {
@@ -68,6 +69,10 @@ export class ModifyCustomerComponent {
     if (!this.user.dni.trim()) {
       this.error = true;
       this.error_msg = 'Ingrese el DNI del cliente nuevo';
+    }
+    if (this.user.tasaMora < 1 ||this.user.tasaMora > 10 ) {
+      this.error = true;
+      this.error_msg = 'Tasa de mora no puede ser menor a 1 ni mayor que 10';
     }
     if (!this.user.username.trim()) {
       this.error = true;
