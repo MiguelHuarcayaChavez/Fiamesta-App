@@ -30,6 +30,8 @@ export class AddCreditLogicComponent {
     this.apiAuth.findUserByIdCustomer(this.user.id).subscribe((data:any)=>{
       this.user.creditLimit = data[0].creditLimit
     })
+    this.credit.periodoGracia=0;
+    this.credit.diferido=false;
   }
 
   getMinTime() {
@@ -109,14 +111,12 @@ export class AddCreditLogicComponent {
         idCustomer: this.user.id,
         costoTotal: this.credit.costoTotal,
         tasa: this.credit.tasa,
-        Mora: 0,
         totalPagar: this.credit.totalPagar,
-        fechaLimite: this.credit.mesesParaPagar,
-        tipoTasa: "nominal",
+        mesesParaPagar:this.credit.mesesParaPagar,
         descripcionCompra: this.credit.descripcionCompra,
         diferido: this.credit.diferido,
         periodoGracia: this.credit.periodoGracia,
-        timeCategory: this.credit.timeCategory
+        timeCategory: this.timeCategory
       };
 
       this.apiHome.createCredit(json).subscribe((data) => {
@@ -138,7 +138,7 @@ export class AddCreditLogicComponent {
       this.error = true;
       this.error_msg = `Ingrese un Costo Total válido (mayor que cero y menor o igual a ${this.user.creditLimit})`;
     }
-    if (this.credit.tasa == null || this.credit.tasa <= 5 || this.credit.tasa > 10) {
+    if (this.credit.tasa == null || this.credit.tasa <= 5|| this.credit.tasa > 10) {
       this.error = true;
       this.error_msg = 'Ingrese una Tasa válida (mayor que 5 y menor o igual a 10)';
     }

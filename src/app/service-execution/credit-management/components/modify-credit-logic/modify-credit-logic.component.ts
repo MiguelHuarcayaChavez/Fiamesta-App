@@ -43,7 +43,7 @@ export class ModifyCreditLogicComponent implements OnInit {
       case 'quincenas':
         return 10;
       case 'meses':
-        return 5;
+        return 6;
       default:
         return 1;
     }
@@ -112,7 +112,6 @@ export class ModifyCreditLogicComponent implements OnInit {
         Mora: this.credit.Mora,
         totalPagar: this.credit.totalPagar,
         mesesParaPagar: this.credit.mesesParaPagar,
-        tipoTasa: "nominal",
         descripcionCompra: this.credit.descripcionCompra,
         diferido: this.credit.diferido,
         periodoGracia: this.credit.periodoGracia,
@@ -153,7 +152,7 @@ export class ModifyCreditLogicComponent implements OnInit {
       this.error = true;
       this.error_msg = `Ingrese un número válido de Tiempo para Pagar (mayor que cero y menor o igual a ${this.getMaxTime()} ${this.timeCategory})`;
     }
-    if (this.credit.diferido && (this.credit.periodoGracia == null || this.credit.periodoGracia < 0 || this.credit.periodoGracia >= this.credit.mesesParaPagar || this.credit.periodoGracia > 3)) {
+    if (this.credit.diferido && (this.credit.periodoGracia == null || this.credit.periodoGracia < 0 || this.credit.periodoGracia >= this.credit.mesesParaPagar)) {
       this.error = true;
       this.error_msg = 'Ingrese un Periodo de Gracia válido (mayor o igual a cero, menor que los meses para pagar y menor o igual a 3)';
     }

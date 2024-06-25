@@ -37,7 +37,8 @@ export class AddCustomerComponent {
         telefono: this.user.telefono,
         dni: this.user.dni,
         admin: false,
-        creditLimit: this.user.creditLimit
+        creditLimit: this.user.creditLimit,
+        tasaMora: this.user.tasaMora
       };
 
       this.apiAuth.createUser(json).subscribe((data) => {
