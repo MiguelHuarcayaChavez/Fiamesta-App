@@ -3,7 +3,7 @@
     {
       "id": "2a93",
       "idAdmin": 0,
-      "username": "Paulin Lin Lin",
+      "username": "Paolin Lin Lin",
       "dni": "98765432",
       "password": "1234",
       "admin": true
@@ -65,6 +65,16 @@
       "admin": false,
       "creditLimit": 180,
       "tasaMora": 9
+    },
+    {
+      "id": "b43c",
+      "idAdmin": "2a93",
+      "username": "Miguel",
+      "telefono": "99999999",
+      "dni": "72432906",
+      "admin": false,
+      "creditLimit": 250,
+      "tasaMora": 5
     }
   ],
   "credits": [
@@ -79,18 +89,6 @@
       "periodoGracia": 0,
       "timeCategory": "meses",
       "id": "b726"
-    },
-    {
-      "idCustomer": "0a52",
-      "costoTotal": 80,
-      "tasa": 6,
-      "totalPagar": 81.94828078499131,
-      "mesesParaPagar": 6,
-      "descripcionCompra": "4 six pack coronitas",
-      "diferido": true,
-      "periodoGracia": 3,
-      "timeCategory": "meses",
-      "id": "c13a"
     },
     {
       "id": "7fa4",
@@ -127,6 +125,18 @@
       "diferido": true,
       "periodoGracia": 3,
       "timeCategory": "semanas"
+    },
+    {
+      "id": "0044",
+      "idCustomer": "0a52",
+      "costoTotal": 200,
+      "tasa": 8,
+      "totalPagar": 204.50588427683073,
+      "mesesParaPagar": 4,
+      "descripcionCompra": "2 cervezas",
+      "diferido": true,
+      "periodoGracia": 2,
+      "timeCategory": "meses"
     }
   ]
 }
